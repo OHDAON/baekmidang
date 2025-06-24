@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백미당</title>
+     <link rel="stylesheet" href="css/baekmidang_1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            //* header 서브메뉴 슬라이드  *//
+            
+            $(".header_wrap").mouseover(function() {
+                $(".lnb").stop().slideDown(200);
+                    $(".header_wrap").addClass("on");
+            });
+            $(".header_wrap").mouseout(function() {
+                $(".lnb").stop().slideUp(100);
+                    $(".header_wrap").removeClass("on");
+            });
+       
+
+            // *  sec5   인스타그램 슬라이드  *//
+
+            setInterval(fnSlideNewCont, 5000);
+
+                function fnSlideNewCont() {
+                    $(".sec5_box").animate({ "margin-left": "-365px" }, 2000, function () {
+                        $(".sec5_box>li:first-child").insertAfter(".sec5_box>li:last-child");
+                        $(".sec5_box").css({ "margin-left": "0px" });
+                    });
+                };
+        
+            // *  sec6   수상작 슬라이드  *//
+
+            let sec6 = $(".sec6_box");
+            setInterval(() => {
+                sec6.css("transition", "transform 1.5s ease");
+                sec6.css("transform", "translateX(-1850px)");
+
+                setTimeout(() => {
+                    sec6.append(sec6.children().first());
+                    sec6.css("transition", "none");
+                    sec6.css("transform", "translateX(0)");
+                }, 5000);
+            }, 5000);
+
+        });
+
+    </script>
+</head>
+<body>
+    <div id="header">
+        <div class="header_wrap">
+            <h1 class="hd_logo"><a href="#"><img src="images/logo_white.png" alt="백미당 로고"></a></h1>
+            <nav>
+                <ul class="gnb">
+                    <li class="hd_menu">
+                        <a href="#">백미당</a>
+                        <ul class="lnb">
+                            <li><a href="#">백미당의 약속</a></li>
+                            <li><a href="#">백미당 아카이브</a></li>
+                        </ul>
+                    </li>
+                    <li class="hd_menu">
+                        <a href="#">맛</a>
+                        <ul class="lnb">
+                            <li><a href="#">백미당 시즌메뉴</a></li>
+                            <li><a href="#">스폐셜 아이스크림</a></li>
+                            <li><a href="#">백미당 커피</a></li>
+                            <li><a href="#">차 & 음료</a></li>
+                            <li><a href="#">디저트</a></li>
+                        </ul>
+                    </li>
+                    <li class="hd_menu">
+                        <a href="#">공간</a>
+                        <ul class="lnb">
+                            <li><a href="#">소개</a></li>
+                            <li><a href="#"><span>백미당 본점</span></a></li>
+                            <li><a href="#"><span>백미당 삼청점</span></a></li>
+                            <li><a href="#">매장 찾기</a></li>
+                        </ul>
+                    </li>
+                    <li class="hd_menu">
+                        <a href="#">소식</a>
+                        <ul class="lnb">
+                            <li><a href="#">소식 & 이벤트</a></l>
+                        </ul>
+                    </li>
+                    <li class="hd_menu">
+                        <a href="#">제안/제보</a>
+                        <ul class="lnb">
+                            <li><a href="#">제안</a></li>
+                            <li><a href="#">제보</a></li>
+                            <li><a href="#">윤리강령</a></li>
+                        </ul>
+                    </li>
+                    <li class="hd_menu">
+                        <a href="#">채용</a>
+                        <ul class="lnb">
+                            <li><a href="#">채용안내</a></li>
+                            <li><a href="#">복리후생</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lan">
+                <ul>
+                    <li><h3><a href="#">KN</a></h3></li>
+                    <li><h3><a href="#">EN</a></h3></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div id="section">
+        <div class="sec1">
+            <div class="sec1_bei">
+                <ul class="sec1_box">
+                    <li>
+                        <h1 class="tit1">백미당이 만들면 <br>맛있습니다.</h1>
+                        <p class="txt1">
+                            유기농 우유, 신선한 제철 식재료, 그리고 특별한 공간,<br>
+                            가장 순수한 맛이 가장 오래간다는 신념 하에<br>
+                            언제나 기본을 지킨 맛을 선보입니다.<br>
+                        </p>
+                    </li>
+                    <li>
+                        <ul class="img1">
+                            <li><img src="images/sec1_img.png" alt="커피에 우유따르는 손"></li>
+                            <li><img src="images/menu_cafe03.png" alt="커피"></li>
+                            <li><img src="images/menu_cafe01.png" alt="커피"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sec2">
+            <ul class="sec2_box">
+                <li><img src="images/sec2_img.png" alt="아이스크림"></li>
+                <li>
+                    <h1 class="tit2">백미당의 약속</h1>
+                    <p class="txt2">
+                        시간이 흘러도 변하지 않는 것을 본질이라 일컫습니다.<br>
+                        '百'이라는 큰 숫자만큼 '오래 간다'의 의미를 담은 백미당은<br>
+                        오래도록 기억에 남는 맛을 위해 가장 본질에 가까운 깊은 맛을 제안합니다.<br>
+                        가장 순수한 맛이 가장 오래간다는 신념 하에,<br>
+                        정직한 식재료와 맛에 대한 고집으로 언제나 기본을 지킨 맛을 선사하는<br>
+                        백미당을 경험하세요.<br>
+                    </p>
+                    <p class="txt2_1"><a href="#">more</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="sec3">
+            <div class="sec3_bei">
+                <div class="sec3_box">
+                    <img src="images/menu_main.jpg" alt="아이스크림4개">
+                    <div class="box3">
+                        <h2 class="tit3">백미당의 <br> <span>스폐셜한 메뉴</span>를<br>소개합니다.</h2>
+                        <p class="txt3"><a href="#">자세히 보기</a></p>
+                        <ul class="img3">
+                            <li><img src="images/sec3_1.png" alt="통통팥 모나카"></li>
+                            <li><img src="images/sec3_2.png" alt="통통팥 빙수"></li>
+                            <li><img src="images/sec3_3.png" alt="통통팥 아이스크림"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="sec4">
+            <div class="sec4_box">
+                <ul>
+                    <li>
+                        <div class="img4_1"></div>
+                        <h5 class="txt4">백미당의 한국적 감성이 담긴 시그니처 공간, 백미당 본점</h5>
+                        <p class="sec4_mo1"><a href="#">more</a></p>
+                    </li>
+                    <li>
+                        <div class="img4_2"></div>
+                        <h5 class="txxt4">한옥 풍경과 어우러진 단 하나의 문화공간, 백미당 삼청점</h5>
+                        <p class="sec4_mo2"><a href="#">more</a></p>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="sec5">
+            <div class="sec5_back">
+                <p class="txt5">Baekmidang SNS</p>
+                <h1 class="tit5">@Baeckmidamg_official</h1>
+                <div class="carousel">
+                    <div class="sec5_wrapper">
+                        <ul class="sec5_box">
+                            <li class="ins5"><img src="images/sns_7.jpg" alt="sns7">
+                                <ul class="box5_1">
+                                    <li class="badge"><img src="images/love_icn.png" alt="하트"></li>
+                                    <li class="txxt5"><a href="#">#EVENT 통통팥 메뉴 3종 출시기념 팔로우 이벤트</a></li>
+                                </ul>
+                            </li>
+                            <li class="ins5"><img src="images/sns_6.jpg" alt="sns6">
+                                <ul class="box5_1">
+                                    <li class="badge"><img src="images/love_icn.png" alt="하트"></li>
+                                    <li class="txxt5"><a href="#">백미당 LF스퀘어 양주점 OPEN</a></li>
+                                </ul>
+                            </li>
+                            <li class="ins5"><img src="images/sns_5.jpg" alt="sns5">
+                                <ul class="box5_1">
+                                    <li class="badge"><img src="images/love_icn.png" alt="하트"></li>
+                                    <li class="txxt5"><a href="#">#EVENT 백미당 보냉백 출시! ❄️</a></li>
+                                </ul>
+                            </li>
+                            <li class="ins5"><img src="images/sns_4.jpg" alt="sns4">
+                                <ul class="box5_1">
+                                    <li class="badge"><img src="images/love_icn.png" alt="하트"></li>
+                                    <li class="txxt5"><a href="#">백미당 X T멤버십</a></li>
+                                </ul>
+                            </li>
+                            <li class="ins5"><img src="images/sns_3.jpg" alt="sns3">
+                                <ul class="box5_1">
+                                    <li class="badge"><img src="images/love_icn.png" alt="하트"></li>
+                                    <li class="txxt5"><a href="#">#EVENT 나의 라떼 취향 고르기</a></li>
+                                </ul>
+                            </li>
+                            <li class="ins5"><img src="images/sns_2.jpg" alt="sns2">
+                                <ul class="box5_1">
+                                    <li class="badge"><img src="images/love_icn.png" alt="하트"></li>
+                                    <li class="txxt5"><a href="#">#EVENT 백미당X끼리 콜라보 인증샷 이벤트</a></li>
+                                </ul>
+                            </li>
+                            <li class="ins5"><img src="images/sns_1.jpg" alt="sns1">
+                                <ul class="box5_1">
+                                    <li class="badge"><img src="images/love_icn.png" alt="하트"></li>
+                                    <li class="txxt5"><a href="#">‘따뜻한 햇살 아래, 백미당에서 라떼 한 잔 어때요?‘</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="sec6">
+            <div class="sec6_back">
+                <h1 class="tit6">백미당 패키지 디자인 공모전</h1>
+                <div class="car6">
+                    <ul class="sec6_box">
+                        <li class="sec6_img">
+                            <ul class="sec6_4">
+                                <li><img src="images/design_4.jpg" alt="수상작"></li>
+                                <li><img src="images/design_401.jpg" alt="01"></li>
+                                <li><img src="images/design_402.jpg" alt="02"></li>
+                                <li><img src="images/design_403.jpg" alt="03"></li>
+                            </ul>
+                        </li>
+                        <li class="sec6_img">
+                            <ul class="sec6_3">
+                                <li><img src="images/design_3.jpg" alt="수상작"></li>
+                                <li><img src="images/design_301.jpg" alt="01"></li>
+                                <li><img src="images/design_302.jpg" alt="02"></li>
+                                <li><img src="images/design_303.jpg" alt="03"></li>
+                            </ul>
+                        </li>
+                        <li class="sec6_img">
+                            <ul class="sec6_2">
+                                <li><img src="images/design_2.jpg" alt="수상작"></li>
+                                <li><img src="images/design_201.jpg" alt="01"></li>
+                                <li><img src="images/design_202.jpg" alt="02"></li>
+                                <li><img src="images/design_203.jpg" alt="03"></li>
+                            </ul>
+                        </li>
+                        <li class="sec6_img">
+                            <ul class="sec6_1">
+                                <li><img src="images/design_1.jpg" alt="수상작"></li>
+                                <li><img src="images/design_101.jpg" alt="01"></li>
+                                <li><img src="images/design_102.jpg" alt="02"></li>
+                                <li><img src="images/design_103.jpg" alt="03"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sec7">
+            <div class="view">
+                <h1><a href="#"><img src="images/icon.png" alt="매장찾기"></a></h1>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="fot_color">
+            <div class="fot_le">
+                <ul>
+                    <li><a href="#">백미당</a></li>
+                    <li><a href="#">맛</a></li>
+                    <li><a href="#">공간</a></li>
+                    <li><a href="#">소식</a></li>
+                    <li><a href="#">제안/제보</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">윤리강령</a></li>
+                </ul>
+                <p class="fot_txt1">
+                    대표자 : 서경민<br>
+                    사업자등록번호 : 599-88-03280<br>
+                    사업장 : 경기도 수원시 영통구 중부대로 447번길 9, 4층<br>
+                    본점 : 경기도 수원시 영통구 중부대로 447번길 9, 4
+                </p>
+                <p class="fot_txt2">Copyright © 2024 All Rights Reserved.</p>
+            </div>
+            <div class="fot_ri">
+                <img src="images/ico_sns_insta_wi.png" alt="인스타아이콘">
+                <ul>
+                    <li>고객센터</li>
+                    <li>1833-4672</li>
+                    <li>월-금 / 09:00 - 17:30</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
